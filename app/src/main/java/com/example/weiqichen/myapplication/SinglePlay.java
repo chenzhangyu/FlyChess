@@ -36,6 +36,13 @@ public class SinglePlay extends AppCompatActivity {
                     szasyncTask.execute("a");
             }
         });
+        blue1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Global.ran==5)
+                v.offsetLeftAndRight(100);
+            }
+        });
     }
 }
 class SzAsyncTask extends AsyncTask<String,Integer,String>{
@@ -48,8 +55,8 @@ class SzAsyncTask extends AsyncTask<String,Integer,String>{
         ;
     }
     protected void onProgressUpdate(Integer... values){
-        int ran = (int) (Math.random() * 6) % 6;
-        switch (ran) {
+        Global.ran = (int) (Math.random() * 6) % 6;
+        switch (Global.ran) {
             case 0:
                 sz.setBackgroundResource(R.drawable.sz1);
                 break;
