@@ -4,9 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context="com.example.weiqichen.myapplication.SinglePlay">
 
     <include layout="@layout/scontent_main" />
+
+    <Button
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:text="New Button"
+        android:id="@+id/button"
+        android:layout_x="86dp"
+        android:layout_y="190dp" />
 
 </AbsoluteLayout>

@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import java.lang.ref.SoftReference;
 
-
 /**
  * Created by WeiqiChen on 2016/4/20.
  */
@@ -39,8 +38,12 @@ public class SinglePlay extends AppCompatActivity {
         blue1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Global.ran==5)
-                v.offsetLeftAndRight(100);
+                if(Global.ran==5) {
+                    float scale = getResources().getDisplayMetrics().density;
+                    float scaleDenesity = getResources().getDisplayMetrics().scaledDensity;
+                    v.setX(86*scale+0.5f);
+                    v.setY((float)(190*scale*1.08)+0.5f); //乘以屏幕尺寸缩放比 暂适配小米2s
+                }
             }
         });
     }
