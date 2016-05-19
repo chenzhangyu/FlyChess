@@ -11,22 +11,23 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
-
+import android.content.Context;
 import java.lang.ref.SoftReference;
-
+import android.util.AttributeSet;
 /**
  * Created by WeiqiChen on 2016/4/20.
  */
 public class SinglePlay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.single_play);
-        ImageButton blue1 = (ImageButton) findViewById(R.id.blue1);
-        ImageButton blue2 = (ImageButton) findViewById(R.id.blue2);
-        ImageButton blue3 = (ImageButton) findViewById(R.id.blue3);
-        ImageButton blue4 = (ImageButton) findViewById(R.id.blue4);
+        final float scale = getResources().getDisplayMetrics().density;
+        final fcViewImageButton blue1 = (fcViewImageButton) findViewById(R.id.blue1);
+        fcViewImageButton blue2 = (fcViewImageButton) findViewById(R.id.blue2);
+        fcViewImageButton blue3 = (fcViewImageButton) findViewById(R.id.blue3);
+        fcViewImageButton blue4 = (fcViewImageButton) findViewById(R.id.blue4);
         final ImageButton sz = (ImageButton) findViewById(R.id.sz);
         sz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,11 +39,16 @@ public class SinglePlay extends AppCompatActivity {
         blue1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Global.ran==5) {
-                    float scale = getResources().getDisplayMetrics().density;
-                    float scaleDenesity = getResources().getDisplayMetrics().scaledDensity;
-                    v.setX(86*scale+0.5f);
-                    v.setY((float)(190*scale*1.08)+0.5f); //乘以屏幕尺寸缩放比 暂适配小米2s
+                if(Global.ran==5&&blue1.getFlystutas()==0) {
+                    v.setX(170*scale+0.5f);
+                    v.setY((float) (417 * scale * 1.08) + 0.5f); //乘以屏幕尺寸缩放比 暂适配小米2s
+                    blue1.setflystatus(1);
+                    blue1.setId(0);
+                }
+                else if(blue1.getFlystutas()==1){
+                    blue1.setId(Global.ran+1);
+                    blue1.setX(Move.pos[blue1.getId()].GetX()*scale+0.5f);
+                    blue1.setY((float)(Move.pos[blue1.getId()].GetY()*scale*1.08)+0.5f);
                 }
             }
         });
@@ -93,6 +99,33 @@ class SzAsyncTask extends AsyncTask<String,Integer,String>{
             }
         }
         return null;
+    }
+}
+class fcViewImageButton extends ImageButton{
+    private int CurrentId=0,flystutas;
+    public fcViewImageButton(Context context){
+        super(context);
+    }
+    public fcViewImageButton(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        // TODO Auto-generated constructor stub
+    }
+
+    public fcViewImageButton(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        // TODO Auto-generated constructor stub
+    }
+    public void setId(int ran){
+        CurrentId+=ran;
+    }
+    public int getId(){
+        return CurrentId;
+    }
+    public void setflystatus(int status){
+        flystutas=status;
+    }
+    public int getFlystutas(){
+        return flystutas;
     }
 }
 

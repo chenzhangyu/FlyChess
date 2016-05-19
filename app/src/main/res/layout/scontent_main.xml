@@ -16,7 +16,7 @@
         android:layout_marginBottom="46dp"
         />
 
-    <ImageButton
+    <com.example.weiqichen.myapplication.fcViewImageButton
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:background="@drawable/blue"
@@ -26,7 +26,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="20dp" />
 
-    <ImageButton
+    <com.example.weiqichen.myapplication.fcViewImageButton
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:background="@drawable/blue"
@@ -34,7 +34,7 @@
         android:layout_alignTop="@+id/blue1"
         android:layout_toEndOf="@+id/blue1" />
 
-    <ImageButton
+    <com.example.weiqichen.myapplication.fcViewImageButton
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:background="@drawable/blue"
@@ -42,7 +42,7 @@
         android:layout_below="@+id/blue2"
         android:layout_alignStart="@+id/blue1" />
 
-    <ImageButton
+    <com.example.weiqichen.myapplication.fcViewImageButton
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:background="@drawable/blue"
