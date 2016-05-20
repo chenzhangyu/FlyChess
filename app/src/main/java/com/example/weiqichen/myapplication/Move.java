@@ -36,7 +36,7 @@ class Position{
         return y;
     }
 }
-/*class mvAsyncTask extends AsyncTask<String,Integer,String> {
+class mvAsyncTask extends AsyncTask<String,Integer,String> {
     private fcViewImageButton fc;
     private int start;
     private int end;
@@ -50,15 +50,15 @@ class Position{
         ;
     }
     protected void onProgressUpdate(Integer... values){
-        ;
+        fc.setX(Move.pos[values[0]].GetX() * 2 + 0.5f);
+        fc.setY((float) (Move.pos[values[0]].GetY() * 2 * 1.08) + 0.5f);
     }
 
     @Override
     protected String doInBackground(String... params) {
-        for(int i=this.start;i<this.end;i++){
+        for(int i=this.start;i<=this.end;i++){
             try{
-                publishProgress();
-                fc.setX(Move.pos[i].GetX() * Global.scale + 0.5f));
+                publishProgress(i);
                 Thread.currentThread().sleep(200);
             }
             catch (InterruptedException e){
@@ -67,4 +67,4 @@ class Position{
         }
         return null;
     }
-}*/
+}

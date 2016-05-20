@@ -3,16 +3,23 @@ package com.example.weiqichen.myapplication;
 import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.content.Context;
 import java.lang.ref.SoftReference;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.util.AttributeSet;
 /**
  * Created by WeiqiChen on 2016/4/20.
@@ -100,9 +107,43 @@ public class SinglePlay extends AppCompatActivity {
                     blue4.setId(0);
                 }
                 else if(blue4.getFlystutas()==1&&Global.szStatus==1){
+                    //float startX,startY,endX,endY;
+                    int begin,end;
+                    begin=blue4.getId();
                     blue4.setId(Global.ran + 1);
-                    blue4.setX(Move.pos[blue4.getId()].GetX() * scale + 0.5f);
-                    blue4.setY((float)(Move.pos[blue4.getId()].GetY()*scale*1.08)+0.5f);
+                    end=blue4.getId();
+                    mvAsyncTask mvasy = new mvAsyncTask(blue4,begin,end);
+                    mvasy.execute("a");
+                    /*for(int i=begin;i<end;i++) {
+                        startX = Move.pos[i].GetX() * scale + 0.5f;
+                        startY = (float) (Move.pos[i].GetY() * scale * 1.08) + 0.5f;
+                        endX = Move.pos[i+1].GetX() * scale + 0.5f;
+                        endY = (float) (Move.pos[i+1].GetY() * scale * 1.08) + 0.5f;
+                        Animation animation = new TranslateAnimation(0, endX - startX, 0, endY - startY);
+                        animation.setDuration(1000);
+                        animation.setFillAfter(true);
+                        blue4.startAnimation(animation);
+                        animation.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+// TODO Auto-generated method stub
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+// TODO Auto-generated method stub
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+// TODO Auto-generated method stub
+                                blue4.clearAnimation();
+
+                            }
+                        });
+                    }*/
+                    //blue4.setX(Move.pos[blue4.getId()].GetX() * scale + 0.5f);
+                    //blue4.setY((float) (Move.pos[blue4.getId()].GetY() * scale * 1.08) + 0.5f);
                 }
                 Global.szStatus=0;
             }

@@ -20,5 +20,5 @@ import android.util.AttributeSet;
 public class Global {
     static int ran=0; //方便测试临时设置
     static int szStatus=0;
-    //float scale = context.getResources().getDisplayMetrics().density;
+    //static float scale = getResources().getDisplayMetrics().density;
 }
