@@ -25,31 +25,86 @@ public class SinglePlay extends AppCompatActivity {
         setContentView(R.layout.single_play);
         final float scale = getResources().getDisplayMetrics().density;
         final fcViewImageButton blue1 = (fcViewImageButton) findViewById(R.id.blue1);
-        fcViewImageButton blue2 = (fcViewImageButton) findViewById(R.id.blue2);
-        fcViewImageButton blue3 = (fcViewImageButton) findViewById(R.id.blue3);
-        fcViewImageButton blue4 = (fcViewImageButton) findViewById(R.id.blue4);
+        final fcViewImageButton blue2 = (fcViewImageButton) findViewById(R.id.blue2);
+        final fcViewImageButton blue3 = (fcViewImageButton) findViewById(R.id.blue3);
+        final fcViewImageButton blue4 = (fcViewImageButton) findViewById(R.id.blue4);
         final ImageButton sz = (ImageButton) findViewById(R.id.sz);
         sz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(Global.szStatus==0) {
                     SzAsyncTask szasyncTask = new SzAsyncTask(sz);
                     szasyncTask.execute("a");
+                    Global.szStatus=1;
+                }
             }
         });
         blue1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Global.ran==5&&blue1.getFlystutas()==0) {
-                    v.setX(170*scale+0.5f);
+                if(Global.ran==5&&blue1.getFlystutas()==0&&Global.szStatus==1) {
+                    v.setX(170 * scale + 0.5f);
                     v.setY((float) (417 * scale * 1.08) + 0.5f); //乘以屏幕尺寸缩放比 暂适配小米2s
                     blue1.setflystatus(1);
                     blue1.setId(0);
                 }
-                else if(blue1.getFlystutas()==1){
-                    blue1.setId(Global.ran+1);
-                    blue1.setX(Move.pos[blue1.getId()].GetX()*scale+0.5f);
+                else if(blue1.getFlystutas()==1&&Global.szStatus==1){
+                    blue1.setId(Global.ran + 1);
+                    blue1.setX(Move.pos[blue1.getId()].GetX() * scale + 0.5f);
                     blue1.setY((float)(Move.pos[blue1.getId()].GetY()*scale*1.08)+0.5f);
                 }
+                Global.szStatus=0;
+            }
+        });
+        blue2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Global.ran==5&&blue2.getFlystutas()==0&&Global.szStatus==1) {
+                    v.setX(170 * scale + 0.5f);
+                    v.setY((float) (417 * scale * 1.08) + 0.5f); //乘以屏幕尺寸缩放比 暂适配小米2s
+                    blue2.setflystatus(1);
+                    blue2.setId(0);
+                }
+                else if(blue2.getFlystutas()==1&&Global.szStatus==1){
+                    blue2.setId(Global.ran + 1);
+                    blue2.setX(Move.pos[blue2.getId()].GetX() * scale + 0.5f);
+                    blue2.setY((float)(Move.pos[blue2.getId()].GetY()*scale*1.08)+0.5f);
+                }
+                Global.szStatus=0;
+            }
+        });
+        blue3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Global.ran==5&&blue3.getFlystutas()==0&&Global.szStatus==1) {
+                    v.setX(170 * scale + 0.5f);
+                    v.setY((float) (417 * scale * 1.08) + 0.5f); //乘以屏幕尺寸缩放比 暂适配小米2s
+                    blue3.setflystatus(1);
+                    blue3.setId(0);
+                }
+                else if(blue3.getFlystutas()==1&&Global.szStatus==1){
+                    blue3.setId(Global.ran + 1);
+                    blue3.setX(Move.pos[blue3.getId()].GetX() * scale + 0.5f);
+                    blue3.setY((float)(Move.pos[blue3.getId()].GetY()*scale*1.08)+0.5f);
+                }
+                Global.szStatus=0;
+            }
+        });
+        blue4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Global.ran==5&&blue4.getFlystutas()==0&&Global.szStatus==1) {
+                    v.setX(170 * scale + 0.5f);
+                    v.setY((float) (417 * scale * 1.08) + 0.5f); //乘以屏幕尺寸缩放比 暂适配小米2s
+                    blue4.setflystatus(1);
+                    blue4.setId(0);
+                }
+                else if(blue4.getFlystutas()==1&&Global.szStatus==1){
+                    blue4.setId(Global.ran + 1);
+                    blue4.setX(Move.pos[blue4.getId()].GetX() * scale + 0.5f);
+                    blue4.setY((float)(Move.pos[blue4.getId()].GetY()*scale*1.08)+0.5f);
+                }
+                Global.szStatus=0;
             }
         });
     }
@@ -99,6 +154,11 @@ class SzAsyncTask extends AsyncTask<String,Integer,String>{
             }
         }
         return null;
+    }
+    protected void onPostExecute(){
+        if(Global.ran==5){
+            Global.szStatus=1;
+        }
     }
 }
 class fcViewImageButton extends ImageButton{

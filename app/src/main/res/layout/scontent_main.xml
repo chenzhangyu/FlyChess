@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,7 +14,8 @@
         android:background="@drawable/sz1"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="46dp"
-        />
+        android:layout_x="286px"
+        android:layout_y="1048px" />
 
     <com.example.weiqichen.myapplication.fcViewImageButton
         android:layout_width="20dp"
@@ -24,7 +25,9 @@
         android:layout_marginBottom="73dp"
         android:layout_above="@+id/sz"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="20dp" />
+        android:layout_marginStart="20dp"
+        android:layout_x="17dp"
+        android:layout_y="420dp" />
 
     <com.example.weiqichen.myapplication.fcViewImageButton
         android:layout_width="20dp"
@@ -32,7 +35,9 @@
         android:background="@drawable/blue"
         android:id="@+id/blue2"
         android:layout_alignTop="@+id/blue1"
-        android:layout_toEndOf="@+id/blue1" />
+        android:layout_toEndOf="@+id/blue1"
+        android:layout_x="38dp"
+        android:layout_y="419dp" />
 
     <com.example.weiqichen.myapplication.fcViewImageButton
         android:layout_width="20dp"
@@ -40,14 +45,18 @@
         android:background="@drawable/blue"
         android:id="@+id/blue3"
         android:layout_below="@+id/blue2"
-        android:layout_alignStart="@+id/blue1" />
+        android:layout_alignStart="@+id/blue1"
+        android:layout_x="34px"
+        android:layout_y="883px" />
 
     <com.example.weiqichen.myapplication.fcViewImageButton
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:background="@drawable/blue"
         android:id="@+id/blue4"
-        android:layout_alignTop="@+id/blue3"
-        android:layout_alignStart="@+id/blue2" />
+        android:layout_alignTop="@+id/blue1"
+        android:layout_toEndOf="@+id/blue1"
+        android:layout_x="76px"
+        android:layout_y="883px" />
 
-</RelativeLayout>
+</AbsoluteLayout>
