@@ -56,9 +56,12 @@ public class SinglePlay extends AppCompatActivity {
                     blue1.setId(0);
                 }
                 else if(blue1.getFlystutas()==1&&Global.szStatus==1){
+                    int begin,end;
+                    begin=blue1.getId();
                     blue1.setId(Global.ran + 1);
-                    blue1.setX(Move.pos[blue1.getId()].GetX() * scale + 0.5f);
-                    blue1.setY((float)(Move.pos[blue1.getId()].GetY()*scale*1.08)+0.5f);
+                    end=blue1.getId();
+                    mvAsyncTask mvasy = new mvAsyncTask(blue1,begin,end);
+                    mvasy.execute("a");
                 }
                 Global.szStatus=0;
             }
@@ -73,9 +76,12 @@ public class SinglePlay extends AppCompatActivity {
                     blue2.setId(0);
                 }
                 else if(blue2.getFlystutas()==1&&Global.szStatus==1){
+                    int begin,end;
+                    begin=blue2.getId();
                     blue2.setId(Global.ran + 1);
-                    blue2.setX(Move.pos[blue2.getId()].GetX() * scale + 0.5f);
-                    blue2.setY((float)(Move.pos[blue2.getId()].GetY()*scale*1.08)+0.5f);
+                    end=blue2.getId();
+                    mvAsyncTask mvasy = new mvAsyncTask(blue2,begin,end);
+                    mvasy.execute("a");
                 }
                 Global.szStatus=0;
             }
@@ -90,9 +96,12 @@ public class SinglePlay extends AppCompatActivity {
                     blue3.setId(0);
                 }
                 else if(blue3.getFlystutas()==1&&Global.szStatus==1){
+                    int begin,end;
+                    begin=blue3.getId();
                     blue3.setId(Global.ran + 1);
-                    blue3.setX(Move.pos[blue3.getId()].GetX() * scale + 0.5f);
-                    blue3.setY((float)(Move.pos[blue3.getId()].GetY()*scale*1.08)+0.5f);
+                    end=blue3.getId();
+                    mvAsyncTask mvasy = new mvAsyncTask(blue3,begin,end);
+                    mvasy.execute("a");
                 }
                 Global.szStatus=0;
             }
@@ -113,37 +122,7 @@ public class SinglePlay extends AppCompatActivity {
                     blue4.setId(Global.ran + 1);
                     end=blue4.getId();
                     mvAsyncTask mvasy = new mvAsyncTask(blue4,begin,end);
-                    mvasy.execute("a");
-                    /*for(int i=begin;i<end;i++) {
-                        startX = Move.pos[i].GetX() * scale + 0.5f;
-                        startY = (float) (Move.pos[i].GetY() * scale * 1.08) + 0.5f;
-                        endX = Move.pos[i+1].GetX() * scale + 0.5f;
-                        endY = (float) (Move.pos[i+1].GetY() * scale * 1.08) + 0.5f;
-                        Animation animation = new TranslateAnimation(0, endX - startX, 0, endY - startY);
-                        animation.setDuration(1000);
-                        animation.setFillAfter(true);
-                        blue4.startAnimation(animation);
-                        animation.setAnimationListener(new Animation.AnimationListener() {
-                            @Override
-                            public void onAnimationStart(Animation animation) {
-// TODO Auto-generated method stub
-                            }
-
-                            @Override
-                            public void onAnimationRepeat(Animation animation) {
-// TODO Auto-generated method stub
-                            }
-
-                            @Override
-                            public void onAnimationEnd(Animation animation) {
-// TODO Auto-generated method stub
-                                blue4.clearAnimation();
-
-                            }
-                        });
-                    }*/
-                    //blue4.setX(Move.pos[blue4.getId()].GetX() * scale + 0.5f);
-                    //blue4.setY((float) (Move.pos[blue4.getId()].GetY() * scale * 1.08) + 0.5f);
+                    mvasy.execute("a");;
                 }
                 Global.szStatus=0;
             }

@@ -59,4 +59,100 @@
         android:layout_x="76px"
         android:layout_y="883px" />
 
+    <com.example.weiqichen.myapplication.fcViewImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/yellow"
+        android:id="@+id/yellow1"
+        android:layout_x="301dp"
+        android:layout_y="441dp" />
+
+    <com.example.weiqichen.myapplication.fcViewImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/yellow"
+        android:id="@+id/yellow2"
+        android:layout_x="322dp"
+        android:layout_y="441dp" />
+
+    <com.example.weiqichen.myapplication.fcViewImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/yellow3"
+        android:background="@drawable/yellow"
+        android:layout_x="301dp"
+        android:layout_y="419dp" />
+
+    <com.example.weiqichen.myapplication.fcViewImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/yellow4"
+        android:background="@drawable/yellow"
+        android:layout_x="322dp"
+        android:layout_y="419dp" />
+
+    <com.example.weiqichen.myapplication.fcViewImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/red1"
+        android:background="@drawable/red"
+        android:layout_x="302dp"
+        android:layout_y="137dp" />
+
+    <com.example.weiqichen.myapplication.fcViewImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/red2"
+        android:background="@drawable/red"
+        android:layout_x="323dp"
+        android:layout_y="137dp" />
+
+    <com.example.weiqichen.myapplication.fcViewImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/red3"
+        android:background="@drawable/red"
+        android:layout_x="302dp"
+        android:layout_y="114dp" />
+
+    <com.example.weiqichen.myapplication.fcViewImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/red4"
+        android:background="@drawable/red"
+        android:layout_x="323dp"
+        android:layout_y="114dp" />
+
+    <com.example.weiqichen.myapplication.fcViewImageButton
+        android:layout_width="20dp"
+        android:background="@drawable/green"
+        android:layout_height="20dp"
+        android:id="@+id/green1"
+        android:layout_x="18dp"
+        android:layout_y="137dp" />
+
+    <com.example.weiqichen.myapplication.fcViewImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/green"
+        android:id="@+id/green2"
+        android:layout_x="40dp"
+        android:layout_y="137dp" />
+
+    <com.example.weiqichen.myapplication.fcViewImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/green3"
+        android:background="@drawable/green"
+        android:layout_x="18dp"
+        android:layout_y="114dp" />
+
+    <com.example.weiqichen.myapplication.fcViewImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/green4"
+        android:background="@drawable/green"
+        android:layout_x="40dp"
+        android:layout_y="114dp" />
+
 </AbsoluteLayout>
