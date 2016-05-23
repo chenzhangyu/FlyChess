@@ -1,4 +1,5 @@
 package com.example.weiqichen.myapplication;
+import android.app.Activity;
 import android.content.Context;
 import android.media.Image;
 import android.os.AsyncTask;
@@ -20,5 +21,10 @@ import android.util.AttributeSet;
 public class Global {
     static int ran=0; //方便测试临时设置
     static int szStatus=0;
+    static int turn=0;
+    static public void showTurn(Activity current){
+        Toast toast = Toast.makeText(current,"当前位次"+String.valueOf(turn),Toast.LENGTH_SHORT);
+        toast.show();
+    }
     //static float scale = getResources().getDisplayMetrics().density;
 }

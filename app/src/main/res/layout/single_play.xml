@@ -13,7 +13,7 @@
         android:layout_height="20dp"
         android:text="New Button"
         android:id="@+id/button"
-        android:layout_x="298dp"
-        android:layout_y="184dp" />
+        android:layout_x="193dp"
+        android:layout_y="260dp" />
 
 </AbsoluteLayout>
