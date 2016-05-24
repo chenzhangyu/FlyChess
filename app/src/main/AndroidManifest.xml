@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/feixingqi"
+        android:icon="@mipmap/ico"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -19,11 +19,29 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".GameMode"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            </activity>
+        <activity
             android:name=".SinglePlay"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-    </application>
+        <activity
+            android:name=".MultiPlay"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
 
+        </activity>
+        <activity
+            android:name=".ClientSocket"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

@@ -6,14 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.example.weiqichen.myapplication.SinglePlay">
 
-    <include layout="@layout/scontent_main" />
+    <include layout="@layout/scontent_main"
+        android:layout_x="104dp"
+        android:layout_y="-233dp" />
 
     <Button
-        android:layout_width="20dp"
+        android:layout_width="9dp"
         android:layout_height="20dp"
         android:text="New Button"
         android:id="@+id/button"
-        android:layout_x="193dp"
-        android:layout_y="260dp" />
+        android:layout_x="301dp"
+        android:layout_y="411dp" />
 
 </AbsoluteLayout>

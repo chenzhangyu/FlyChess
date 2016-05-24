@@ -35,7 +35,15 @@ public class MainActivity extends AppCompatActivity {
         single.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, SinglePlay.class);
+                intent.setClass(MainActivity.this, GameMode.class);
+                startActivity(intent);
+            }
+        });
+        Multi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, MultiPlay.class);
                 startActivity(intent);
             }
         });

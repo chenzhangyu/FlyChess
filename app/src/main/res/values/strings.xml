@@ -1,4 +1,19 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Fly Chess</string>
     <string name="action_settings">Setting</string>
+    <string name="search">
+        搜索...
+    </string>
+    <string-array name="color">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Green</item>
+    </string-array>
+    <string-array name="spingarr">
+        <item>房间号:1234      人数:1/4</item>
+        <item>房间号:2222      人数:1/2</item>
+        <item>房间号:2333      人数:1/2</item>
+    </string-array>
+
 </resources>

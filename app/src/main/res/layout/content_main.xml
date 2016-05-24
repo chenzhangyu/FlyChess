@@ -14,34 +14,33 @@
     tools:showIn="@layout/activity_main">
 
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:background="@drawable/btn"
+        android:id="@+id/Singgle"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/Multi"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:background="@drawable/btn2"
+        android:id="@+id/Exit"
+        android:layout_gravity="center_horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout">
+        android:layout_alignStart="@+id/Multi" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="单人游戏"
-            android:id="@+id/Singgle"
-            android:layout_gravity="center_horizontal" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="多人游戏"
-            android:id="@+id/Multi"
-            android:layout_gravity="center_horizontal" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="退出"
-            android:id="@+id/Exit"
-            android:layout_gravity="center_horizontal" />
-    </LinearLayout>
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:background="@drawable/btn1"
+        android:id="@+id/Multi"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="62dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/Singgle" />
 
 </RelativeLayout>
