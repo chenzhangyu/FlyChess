@@ -31,6 +31,7 @@ public class Client {
 
             while (true) {
                 ret = reader.readLine();
+                if (ret == null || ret.length() == 0) break;
                 System.out.print(ret);
             }
         } catch (Exception e) {
