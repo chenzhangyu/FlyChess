@@ -84,7 +84,7 @@ public class Client {
 
     public static void write(String data) {
         try {
-            out.writeUTF(data);
+            out.writeBytes(data);
             out.flush();
         } catch (Exception e) {
             System.out.println("write ERROR: " + e.getMessage());
