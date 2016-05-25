@@ -16,11 +16,14 @@ import android.widget.Button;
 import android.content.Intent;
 import android.widget.ImageView;
 
+import com.google.gson.Gson;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Gson gson = new Gson();
         setContentView(R.layout.activity_main);
         Button single = (Button) findViewById(R.id.Singgle);
         Button Multi = (Button) findViewById(R.id.Multi);
